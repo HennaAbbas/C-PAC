@@ -175,12 +175,12 @@ commands:
           command: docker exec docker_test /bin/bash /code/dev/circleci_data/test_in_image.sh
   set-python-version:
     steps:
-#       - run:
-#           name: "Setting Python Version"
-#           command: |
-#             cd /opt/circleci/.pyenv/plugins/python-build/../.. && git pull && cd -
-#             pyenv install -v 3.7.9
-#             pyenv global 3.7.9
+      - run:
+          name: "Setting Python Version"
+          command: |
+ #           cd /opt/circleci/.pyenv/plugins/python-build/../.. && git pull && cd -
+            pyenv install -v 3.7.9
+            pyenv global 3.7.9
 #       - restore_cache:
 #           keys:
 #             - pip-ci-requirements-{{ checksum "dev/circleci_data/requirements.txt" }}-3.7.9
