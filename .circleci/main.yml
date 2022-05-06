@@ -177,7 +177,7 @@ commands:
     steps:
 
       - run: /opt/circleci/.pyenv/versions/3.8.5/bin/python3.8 -m pip install --upgrade pip
-      - run: pip3 install python3     
+      - run: python3 -m pip install -r dev/circleci_data/requirements.txt     
 #           name: "Setting Python Version"
 #           command: |
 #             cd /opt/circleci/.pyenv/plugins/python-build/../.. && git pull && cd -
@@ -188,9 +188,9 @@ commands:
 #             - pip-ci-requirements-{{ checksum "dev/circleci_data/requirements.txt" }}-3.7.9
 #       - run: cd ~ 
 #       - run: ls -a     
-      - run:
-          name: "Installing CI dependencies"
-          command: pip3 install -r dev/circleci_data/requirements.txt
+#       - run:
+#           name: "Installing CI dependencies"
+#           command: pip3 install -r dev/circleci_data/requirements.txt
       - save_cache:
           key: pip-ci-requirements-{{ checksum "dev/circleci_data/requirements.txt" }}-3.7.9
           paths: 
