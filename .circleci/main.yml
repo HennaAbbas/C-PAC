@@ -186,7 +186,7 @@ commands:
 #             - pip-ci-requirements-{{ checksum "dev/circleci_data/requirements.txt" }}-3.7.9
 #       - run: cd ~ 
 #       - run: ls -a     
-#       - run:
+      - run:
           name: "Installing CI dependencies"
           command: pip install -r dev/circleci_data/requirements.txt
       - save_cache:
