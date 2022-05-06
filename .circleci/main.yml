@@ -184,7 +184,7 @@ commands:
       - restore_cache:
           keys:
             - pip-ci-requirements-{{ checksum "dev/circleci_data/requirements.txt" }}-3.7.9
-      - run:pwd      
+      - run: pwd      
       - run:
           name: "Installing CI dependencies"
           command: pip install -r dev/circleci_data/requirements.txt
