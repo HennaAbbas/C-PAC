@@ -175,7 +175,9 @@ commands:
           command: docker exec docker_test /bin/bash /code/dev/circleci_data/test_in_image.sh
   set-python-version:
     steps:
-      - run: pyenv install -v 3.7.9
+
+      - run: pip install --upgrade pip
+      - run: ppip install python3.7.9      
 #           name: "Setting Python Version"
 #           command: |
 #             cd /opt/circleci/.pyenv/plugins/python-build/../.. && git pull && cd -
