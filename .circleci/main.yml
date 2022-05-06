@@ -301,6 +301,16 @@ jobs:
     machine:
       image: ubuntu-2004:202010-01
     steps:
+      - run:
+          command: |
+            while true; do
+              sleep 5
+              # NOTE: on MacOS, the f argument is not supported.
+              # In this case, you can drop the f argument instead.
+              ps auxwwf
+              echo "======"
+            done
+          background: true    
       - checkout
       - set-python-version
       - configure-git-user
